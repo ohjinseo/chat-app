@@ -53,6 +53,7 @@ const Profile = ({ user }) => {
 
   return (
     <div className="profile">
+      <h1>My Profile</h1>
       <p>{user.displayName}</p>
       <button onClick={onEditProfile}>이름 수정</button>
       {editProfile && (

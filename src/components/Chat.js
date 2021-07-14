@@ -51,6 +51,7 @@ const Chat = ({ user }) => {
 
   return (
     <>
+      <h1>Chat</h1>
       {messageArray &&
         messageArray.map((message) => {
           return (

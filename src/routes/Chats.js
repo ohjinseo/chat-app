@@ -24,6 +24,11 @@ const Chats = ({ setChatRoom }) => {
     setAddBtnToggle(false);
   };
 
+  const cancleAddChatRoom = () => {
+    setAddBtnToggle(false);
+    setChatName("");
+  };
+
   const onChange = (event) => {
     const {
       target: { value },
@@ -44,24 +49,39 @@ const Chats = ({ setChatRoom }) => {
   }, []);
 
   return (
-    <>
-      <button onClick={addChatRoomName}>Add ChatRoom</button>
+    <div className="chats__container">
+      <h1>Chats</h1>
+      <button className="first__btn" onClick={addChatRoomName}>
+        Add Chat Room
+      </button>
       {addBtnToggle && (
-        <form onSubmit={onSubmit}>
-          <input type="text" value={chatName} onChange={onChange} />
-          <input type="submit" value="Create Room!" required />
-        </form>
+        <div className="hidden__container">
+          <form onSubmit={onSubmit}>
+            <input
+              type="text"
+              value={chatName}
+              onChange={onChange}
+              placeholder="Input room name"
+            />
+            <button onClick={cancleAddChatRoom}>X</button>
+            <input type="submit" value="Create Room!" required />
+          </form>
+        </div>
       )}
-      {chats &&
-        chats.map((chat) => {
-          return (
-            <div key={chat.id}>
-              {moment(chat.createdAt).fromNow()}에 생성
-              <Link to={{ pathname: `/chat/${chat.id}` }}>{chat.chatName}</Link>
-            </div>
-          );
-        })}
-    </>
+      <div className="chat">
+        {chats &&
+          chats.map((chat) => {
+            return (
+              <div key={chat.id} className="chat__container">
+                <Link className="link" to={{ pathname: `/chat/${chat.id}` }}>
+                  {chat.chatName}
+                </Link>
+                <span>{moment(chat.createdAt).fromNow()}에 생성</span>
+              </div>
+            );
+          })}
+      </div>
+    </div>
   );
 };
 

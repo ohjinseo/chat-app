@@ -42,7 +42,7 @@ const Auth = () => {
 
   return (
     <div className="auth__container">
-      <h1>Chat App</h1>
+      <h2>Chat App</h2>
       <form className="auth__form" onSubmit={onSubmit}>
         <input
           name="email"
@@ -61,7 +61,7 @@ const Auth = () => {
           onChange={onChange}
         ></input>
         <p>{error ? error : ""}</p>
-        <input type="submit" value="로그인"></input>
+        <input type="submit" value="Login"></input>
       </form>
 
       <button onClick={onSocialClick} name="google">

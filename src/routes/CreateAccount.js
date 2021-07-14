@@ -44,8 +44,8 @@ const CreateAccount = () => {
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
+    <div className="auth__container">
+      <form className="auth__form" onSubmit={onSubmit}>
         <input
           name="email"
           type="email"
@@ -75,7 +75,7 @@ const CreateAccount = () => {
         <input type="submit" value="Create Account"></input>
       </form>
       <p>{error ? error : ""}</p>
-    </>
+    </div>
   );
 };
 

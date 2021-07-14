@@ -5,10 +5,16 @@ import "../main.css";
 const Navigation = ({ handleProfileModal }) => {
   return (
     <div className="navigation">
-      <Link to="/">Home</Link>
-      <Link to="/chats">Chats</Link>
+      <Link className="link" to="/">
+        <span>Home</span>
+      </Link>
+      <Link className="link" to="/chats">
+        Chats
+      </Link>
       <button onClick={handleProfileModal}>
-        <Link to="/profile">My Profile</Link>
+        <Link className="link" to="/profile">
+          My Profile
+        </Link>
       </button>
     </div>
   );

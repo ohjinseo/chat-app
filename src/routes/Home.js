@@ -18,7 +18,12 @@ const Home = () => {
       });
   }, []);
   return (
-    <>{users && users.map((user) => <User key={user.id} user={user} />)}</>
+    <div className="home__container">
+      <h1>Users</h1>
+      <div className="user">
+        {users && users.map((user) => <User key={user.id} user={user} />)}
+      </div>
+    </div>
   );
 };
 
