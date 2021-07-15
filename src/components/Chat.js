@@ -50,27 +50,47 @@ const Chat = ({ user }) => {
   };
 
   return (
-    <>
+    <div className="message__container">
       <h1>Chat</h1>
-      {messageArray &&
-        messageArray.map((message) => {
-          return (
-            <div key={message.id}>
-              {message.userName}
-              {moment(message.createdAt).fromNow()}
+      <div className="message">
+        {messageArray &&
+          messageArray.map((message) => {
+            return (
+              <div
+                className={message.messageUser === user.uid && "owner__message"}
+                key={message.id}
+              >
+                <div className="message__content">
+                  {message.messageUser === user.uid && (
+                    <button
+                      className="delete__btn"
+                      onClick={() => onDeleteClick(message.id)}
+                    >
+                      delete
+                    </button>
+                  )}
+                  <span className="user__name">{message.userName}</span>
 
-              {message.message}
-              {message.messageUser === user.uid && (
-                <button onClick={() => onDeleteClick(message.id)}>삭제</button>
-              )}
-            </div>
-          );
-        })}
-      <form onSubmit={onSubmit}>
-        <input type="text" onChange={onChange} value={message} required />
+                  <span>{message.message}</span>
+                </div>
+                <span className="date">
+                  {moment(message.createdAt).fromNow()}
+                </span>
+              </div>
+            );
+          })}
+      </div>
+      <form className="message__form" onSubmit={onSubmit}>
+        <input
+          type="text"
+          onChange={onChange}
+          placeholder="Input message"
+          value={message}
+          required
+        />
         <input type="submit" value="Send"></input>
       </form>
-    </>
+    </div>
   );
 };
 

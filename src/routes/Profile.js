@@ -54,20 +54,35 @@ const Profile = ({ user }) => {
   return (
     <div className="profile">
       <h1>My Profile</h1>
-      <p>{user.displayName}</p>
-      <button onClick={onEditProfile}>이름 수정</button>
-      {editProfile && (
-        <>
-          <form onSubmit={onChangeNameSubmit}>
-            <input type="name" value={newName} onChange={onChangeName}></input>
-            <input type="submit" value="변경" />
-          </form>
-          {error && <p>중복ㅋ</p>}
-          <button onClick={cancleEditProfile}>취소</button>
-        </>
-      )}
-      <p>{user.email}</p>
-      <button onClick={onLogout}>Log Out</button>
+      <div className="profile__container">
+        <div className="user__name">
+          <p>{user.displayName}</p>
+          <p>{user.email}</p>
+        </div>
+        <button className="editname__btn" onClick={onEditProfile}>
+          Edit Name
+        </button>
+        {editProfile && (
+          <>
+            <form onSubmit={onChangeNameSubmit}>
+              <input
+                type="name"
+                value={newName}
+                onChange={onChangeName}
+                placeholder="CSS 귀찮아"
+              ></input>
+              <button onClick={cancleEditProfile}>X</button>
+
+              <input type="submit" value="Submit" />
+            </form>
+            {error && <p>중복ㅋ</p>}
+          </>
+        )}
+
+        <button className="logout__btn" onClick={onLogout}>
+          Log Out
+        </button>
+      </div>
     </div>
   );
 };

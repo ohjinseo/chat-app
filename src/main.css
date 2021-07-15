@@ -22,7 +22,7 @@ button {
   align-items: center;
 }
 
-.auth__container h1 {
+.auth__container h2 {
   margin-bottom: 60px;
   font-size: 35px;
   font-weight: 500;
@@ -231,4 +231,153 @@ h1 {
   border-radius: 8px;
   font-size: 12px;
   cursor: pointer;
+}
+
+.profile__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__container .user__name {
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.profile__container .user__name p:first-child {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.profile__container .editname__btn {
+  border: none;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.profile__container input:first-child {
+}
+
+.profile__container .logout__btn {
+  border: none;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+.profile__container form {
+  margin-top: 15px;
+}
+.profile__container form input:first-child {
+  background: #c0c0c0;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.profile__container form button {
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid #c0c0c0;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.profile__container form input:last-child {
+  border: none;
+  padding: 5px 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+}
+
+.message__form {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message__form input:first-child {
+  padding: 6px 13px;
+  margin: 5px;
+  width: 260px;
+  border-radius: 10px;
+  background-color: #c0c0c0;
+  border: none;
+  font-size: 13px;
+}
+
+.message__form input:last-child {
+  padding: 6px;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+.message {
+  height: 350px;
+  overflow: auto;
+}
+
+.message div {
+  color: black;
+  padding: 5px 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.message .owner__message {
+  flex-direction: row-reverse;
+}
+
+.user__name {
+  font-size: 13px;
+}
+
+.message__content {
+  display: flex;
+}
+
+.message .owner__message .message__content {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.message__content span {
+  display: block;
+}
+
+.message__content span:last-child {
+  background-color: white;
+  border: 1px solid #c0c0c0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.message .date {
+  font-size: 10px;
+}
+
+.message .delete__btn {
+  margin-left: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 6px;
+  padding: 3px;
+  color: #333;
 }
